@@ -1,2 +1,2 @@
 # mtbcord
-Motoko´s Terminal based Discord
+**M**otoko´s **T**erminal **b**ased Dis**cord**
