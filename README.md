@@ -1,4 +1,4 @@
 # mtbcord
-[![Linux_Build](https://github.com/MotokoKusanagii/mtbcord/actions/workflows/Linux%20Build.yml/badge.svg?branch=master)](https://github.com/MotokoKusanagii/mtbcord/actions/workflows/Linux%20Build.yml)
+[![CMake](https://github.com/MotokoKusanagii/mtbcord/actions/workflows/cmake.yml/badge.svg?branch=master)](https://github.com/MotokoKusanagii/mtbcord/actions/workflows/cmake.yml)
 
 **M**otoko´s **T**erminal **b**ased Dis**cord**
