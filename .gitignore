@@ -1,6 +1,2 @@
-build/**
-.sconsign.dblite
-.git/**
-*.a
-mtbcord
+
 
