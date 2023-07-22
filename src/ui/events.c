@@ -12,37 +12,17 @@
 // ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
 // FITNESS FOR A PARTICULAR PURPOSE.See the GNU General Public License for more 
 // details.
-#include "ui/events.h"
-#include <stdlib.h>
-#include <memory.h>
 #include <ui/ui.h>
+#include <ui/events.h>
 
-int main(void) {
-
-	struct UI_INIT_FLAGS *flags = malloc(sizeof(*flags));
-	if (!flags) {
-		fprintf(stderr, "malloc failed on flags.\n");
-	}
-	flags->cbreak = UI_TRUE;
-	flags->echo = UI_FALSE;
-	flags->keypad = UI_TRUE;
-	flags->register_event_init = NULL;
-	flags->register_event_tick = NULL;
-
-	struct UI_STATE *state = malloc(sizeof(*state));
-	if (!state) {
-		fprintf(stderr, "malloc failed on state.\n");
-	}
-
-	ui_init(flags, state);
-
-	ui_run_loop(state);
-
-	ui_shutdown();
-
-	free(flags);
-	free(state);
-
-	return 0;	
+void ui_internal_event_tick(struct UI_STATE *state) {
+    if (state->func_tick != NULL) {
+        state->func_tick(state);
+    }
 }
 
+void ui_internal_event_init(struct UI_STATE *state) {
+    if (state->func_init != NULL) {
+        state->func_init(state);
+    }
+}
